@@ -26,6 +26,10 @@ public class MainPageActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
+
+        ApiCalls apiCalls = new ApiCalls();
+        apiCalls.execute();
     }
 
     @Override

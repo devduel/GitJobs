@@ -26,4 +26,48 @@ public class JobOffer {
         this.howToApply = howToApply;
         this.companyLogo = companyLogo;
     }
+
+    public String getId() {
+        return id;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public String getCreatedAt() {
+        return createdAt;
+    }
+
+    public String getCompany() {
+        return company;
+    }
+
+    public String getCompanyUrl() {
+        return companyUrl;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public String getHowToApply() {
+        return howToApply;
+    }
+
+    public String getCompanyLogo() {
+        return companyLogo;
+    }
 }
