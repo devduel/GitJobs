@@ -1,7 +1,6 @@
 package uep.project.dev.gitjobs;
 
 import android.os.AsyncTask;
-import android.util.Log;
 
 import org.json.JSONException;
 
@@ -15,14 +14,18 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ApiCalls extends AsyncTask<String, Void, Void> {
+public class ApiCalls extends AsyncTask<String, String, String> {
     String receivedData = "";
     List<JobOffer> jobOffers = new ArrayList<>();
 
     @Override
-    protected Void doInBackground(String... params) {
+    protected String doInBackground(String... params) {
+        String parameters = params[0];
+        String basicUrl = "https://jobs.github.com/positions.json?";
+
         try {
-            URL apiURL = new URL("https://jobs.github.com/positions.json?description=python&full_time=true&location=sf");
+            URL apiURL = new URL(basicUrl + parameters);
+            //URL apiURL = new URL("https://jobs.github.com/positions.json?description=python&full_time=true&location=sf");
             HttpURLConnection httpURLConnection = (HttpURLConnection) apiURL.openConnection();
             InputStream inputStream = httpURLConnection.getInputStream();
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
@@ -47,8 +50,11 @@ public class ApiCalls extends AsyncTask<String, Void, Void> {
     }
 
     @Override
-    protected void onPostExecute(Void aVoid) {
-        super.onPostExecute(aVoid);
-        Log.d("GitJobs", Integer.toString(jobOffers.size()));
+    protected void onPostExecute(String result) {
+        super.onPostExecute(result);
+        if (SearchFragment.progressDialog.isShowing()) {
+            JobOfferDaoImpl.jobOffers = jobOffers;
+            SearchFragment.progressDialog.dismiss();
+        }
     }
 }

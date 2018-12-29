@@ -4,14 +4,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class JobOfferDaoImpl implements JobOfferDao {
-    List<JobOffer> jobOffers;
+    public static List<JobOffer> jobOffers;
 
     public JobOfferDaoImpl() {
-        jobOffers = new ArrayList<JobOffer>();
+        jobOffers = new ArrayList<>();
+        //jobOffers =
     }
 
     @Override
     public List<JobOffer> getJobOffers() {
-        return null;
+        return jobOffers;
     }
 }

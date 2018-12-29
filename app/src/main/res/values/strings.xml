@@ -1,4 +1,16 @@
 <resources>
+    <!-- Generic Strings -->
     <string name="app_name">GitJobs</string>
+    <string name="menu">Menu</string>
+
+    <!-- BottomNavigationView Strings -->
+    <string name="action_search">Search Job</string>
+    <string name="action_favourites">Favourites</string>
     <string name="action_settings">Settings</string>
+
+    <!-- SearchFragment Strings -->
+    <string name="description_hint">Description</string>
+    <string name="location_hint">Location</string>
+    <string name="full_time_switch">Full Time?</string>
+    <string name="search_button">SEARCH JOB</string>
 </resources>
