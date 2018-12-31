@@ -1,6 +1,8 @@
 package uep.project.dev.gitjobs;
 
-public class JobOffer {
+import java.io.Serializable;
+
+public class JobOffer implements Serializable {
     String id;
     String type;
     String url;

@@ -13,4 +13,12 @@
     <string name="location_hint">Location</string>
     <string name="full_time_switch">Full Time?</string>
     <string name="search_button">SEARCH JOB</string>
+
+    <!-- SelectedJobOfferActivity Strings -->
+    <string name="open_offer_on_github_button">OPEN ON GITHUB</string>
+    <string name="open_company_website_button">OPEN COMPANY WEBSITE</string>
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

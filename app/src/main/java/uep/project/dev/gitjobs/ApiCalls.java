@@ -25,7 +25,6 @@ public class ApiCalls extends AsyncTask<String, String, String> {
 
         try {
             URL apiURL = new URL(basicUrl + parameters);
-            //URL apiURL = new URL("https://jobs.github.com/positions.json?description=python&full_time=true&location=sf");
             HttpURLConnection httpURLConnection = (HttpURLConnection) apiURL.openConnection();
             InputStream inputStream = httpURLConnection.getInputStream();
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));

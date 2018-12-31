@@ -36,14 +36,12 @@ public class ParseJobOfferJSON {
             url = (String) jsonObject.get("url");
             createdAt = (String) jsonObject.get("created_at");
             company = (String) jsonObject.get("company");
-            //companyUrl = (String) jsonObject.get("company_url");
-            companyUrl = "company url";
+            companyUrl = jsonObject.get("company_url").toString();
             location = (String) jsonObject.get("location");
             title = (String) jsonObject.get("title");
             description = (String) jsonObject.get("description");
             howToApply = (String) jsonObject.get("how_to_apply");
-            //companyLogo = (String) jsonObject.get("company_logo");
-            companyLogo = "logo";
+            companyLogo = jsonObject.get("company_logo").toString();
 
             jobOffer = new JobOffer(id, type, url, createdAt, company, companyUrl, location, title, description, howToApply, companyLogo);
 
