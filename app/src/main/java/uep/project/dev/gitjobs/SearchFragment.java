@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -33,7 +32,6 @@ public class SearchFragment extends Fragment {
     ApiCalls apiCalls;
 
     public SearchFragment() {
-
     }
 
     @Override
@@ -80,25 +78,11 @@ public class SearchFragment extends Fragment {
         return searchView;
     }
 
-    /*@Override
-    public void onStart() {
-        super.onStart();
-        fragment = new SearchFragment();
-        FragmentTransaction transaction = getFragmentManager().beginTransaction();
-        transaction.replace(R.id.main_container, fragment).commit();
-    }*/
-
-    //TODO: Add form validation to force entering some values
-
     private String retrieveAndBuildSearchJobParameters() {
         String description = descriptionEditText.getText().toString();
         String location = locationEditText.getText().toString();
         Boolean fullTime = fullTimeSwitch.isChecked();
-        Log.d("Result", description);
-        Log.d("Result", location);
-        Log.d("Result", fullTime.toString());
 
-        Log.d("Result", buildApiParameters(description, location, fullTime));
         return buildApiParameters(description, location, fullTime);
     }
 

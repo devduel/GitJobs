@@ -43,8 +43,7 @@ public class SearchResultActivity extends AppCompatActivity {
     }
 
     private void prepareJobOffersData() {
-        for (JobOffer offer : SearchFragment.jobOffers
-                ) {
+        for (JobOffer offer : SearchFragment.jobOffers) {
             jobOffers.add(offer);
         }
         sortOffersByTitle();

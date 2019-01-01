@@ -8,7 +8,6 @@ public class JobOfferDaoImpl implements JobOfferDao {
 
     public JobOfferDaoImpl() {
         jobOffers = new ArrayList<>();
-        //jobOffers =
     }
 
     @Override

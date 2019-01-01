@@ -8,7 +8,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.List;
 
@@ -16,12 +15,12 @@ public class JobOfferAdapter extends RecyclerView.Adapter<JobOfferAdapter.MyView
 
     private List<JobOffer> jobOffers;
     private Context context;
+    private static String SERIALIZED_JOB_OFFER_DATA = "SERIALIZED_JOB_OFFER_DATA";
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         private TextView title;
         private TextView company;
         private TextView location;
-        //private TextView type;
         private RelativeLayout relativeLayout;
 
         public MyViewHolder(View view) {
@@ -31,7 +30,6 @@ public class JobOfferAdapter extends RecyclerView.Adapter<JobOfferAdapter.MyView
             title = view.findViewById(R.id.title);
             company = view.findViewById(R.id.company);
             location = view.findViewById(R.id.location);
-            //type = view.findViewById(R.id.type);
         }
     }
 
@@ -54,16 +52,10 @@ public class JobOfferAdapter extends RecyclerView.Adapter<JobOfferAdapter.MyView
         holder.title.setText(jobOffer.getTitle());
         holder.company.setText(jobOffer.getCompany());
         holder.location.setText(jobOffer.getLocation());
-        //holder.type.setText(jobOffer.getLocation());
 
         holder.relativeLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                CharSequence toastText = "You clicked " + jobOffers.get(position).title;
-                int duration = Toast.LENGTH_SHORT;
-                Toast toast = Toast.makeText(view.getContext(), toastText, duration);
-                toast.show();
-
                 JobOffer jobOffer = jobOffers.get(position);
                 openSelectedJobOfferActivity(jobOffer);
             }
@@ -77,7 +69,7 @@ public class JobOfferAdapter extends RecyclerView.Adapter<JobOfferAdapter.MyView
 
     private void openSelectedJobOfferActivity(JobOffer jobOffer) {
         Intent intent = new Intent(context, SelectedJobOfferActivity.class);
-        intent.putExtra("serialize_data", jobOffer);
+        intent.putExtra(SERIALIZED_JOB_OFFER_DATA, jobOffer);
         context.startActivity(intent);
     }
 }

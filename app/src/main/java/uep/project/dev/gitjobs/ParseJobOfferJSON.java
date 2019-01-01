@@ -9,7 +9,6 @@ import java.util.List;
 
 public class ParseJobOfferJSON {
 
-    //TODO: Load companyURL and companyLogo in proper way
     public static List<JobOffer> parseFrom(String data) throws JSONException {
         List<JobOffer> jobOffers = new ArrayList<>();
         JSONArray jsonArray = new JSONArray(data);
@@ -44,7 +43,6 @@ public class ParseJobOfferJSON {
             companyLogo = jsonObject.get("company_logo").toString();
 
             jobOffer = new JobOffer(id, type, url, createdAt, company, companyUrl, location, title, description, howToApply, companyLogo);
-
             jobOffers.add(jobOffer);
         }
         return jobOffers;
