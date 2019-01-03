@@ -15,7 +15,9 @@ public class JobOfferAdapter extends RecyclerView.Adapter<JobOfferAdapter.MyView
 
     private List<JobOffer> jobOffers;
     private Context context;
-    private static String SERIALIZED_JOB_OFFER_DATA = "SERIALIZED_JOB_OFFER_DATA";
+    private static final String SERIALIZED_JOB_OFFER_DATA = "SERIALIZED_JOB_OFFER_DATA";
+    private static final String JOB_OFFER_POSITION = "JOB_OFFER_POSITION";
+    private static final String CALLING_ACTIVITY = "CALLING_ACTIVITY";
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         private TextView title;
@@ -57,7 +59,8 @@ public class JobOfferAdapter extends RecyclerView.Adapter<JobOfferAdapter.MyView
             @Override
             public void onClick(View view) {
                 JobOffer jobOffer = jobOffers.get(position);
-                openSelectedJobOfferActivity(jobOffer);
+                int positionOnTheList = position;
+                openSelectedJobOfferActivity(jobOffer, positionOnTheList, context.toString());
             }
         });
     }
@@ -67,9 +70,11 @@ public class JobOfferAdapter extends RecyclerView.Adapter<JobOfferAdapter.MyView
         return jobOffers.size();
     }
 
-    private void openSelectedJobOfferActivity(JobOffer jobOffer) {
+    private void openSelectedJobOfferActivity(JobOffer jobOffer, int position, String callingActivity) {
         Intent intent = new Intent(context, SelectedJobOfferActivity.class);
         intent.putExtra(SERIALIZED_JOB_OFFER_DATA, jobOffer);
+        intent.putExtra(JOB_OFFER_POSITION, position);
+        intent.putExtra(CALLING_ACTIVITY, callingActivity);
         context.startActivity(intent);
     }
 }

@@ -10,7 +10,7 @@
     <item
         android:id="@+id/action_favourites"
         android:enabled="true"
-        android:icon="@android:drawable/btn_star"
+        android:icon="@mipmap/icon_heartfilled_border_lay"
         android:title="@string/action_favourites"
         app:showAsAction="ifRoom"></item>
     <item

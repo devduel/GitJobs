@@ -27,8 +27,16 @@ public class SelectedJobOfferActivity extends AppCompatActivity {
     private TextView descriptionTextView;
     private ImageView companyLogoImageView;
 
+    private DatabaseHelper database;
+
+    private JobOffer jobOffer;
+    private int jobOfferPosition;
+    private String callingActivity;
+
     private boolean isHeartFilled = false;
-    private static String SERIALIZED_JOB_OFFER_DATA = "SERIALIZED_JOB_OFFER_DATA";
+    private static final String SERIALIZED_JOB_OFFER_DATA = "SERIALIZED_JOB_OFFER_DATA";
+    private static final String JOB_OFFER_POSITION = "JOB_OFFER_POSITION";
+    private static final String CALLING_ACTIVITY = "CALLING_ACTIVITY";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +53,13 @@ public class SelectedJobOfferActivity extends AppCompatActivity {
         openCompanyWebsiteButton = findViewById(R.id.openCompanyWebsiteButtonId);
         companyLogoImageView = findViewById(R.id.companyLogoImageViewId);
 
-        final JobOffer jobOffer = (JobOffer) getIntent().getSerializableExtra(SERIALIZED_JOB_OFFER_DATA);
+        database = new DatabaseHelper(this);
+
+        jobOffer = (JobOffer) getIntent().getSerializableExtra(SERIALIZED_JOB_OFFER_DATA);
+        jobOfferPosition = getIntent().getIntExtra(JOB_OFFER_POSITION, -1);
+        callingActivity = getIntent().getStringExtra(CALLING_ACTIVITY);
+
+        Log.d("Result", callingActivity);
 
         companyAndLocationTextView.setText(jobOffer.getCompany() + " / " + jobOffer.getLocation());
         titleTextView.setText(jobOffer.getTitle());
@@ -64,7 +78,6 @@ public class SelectedJobOfferActivity extends AppCompatActivity {
         openCompanyWebsiteButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Log.d("Result", jobOffer.getCompanyUrl());
                 Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(jobOffer.getCompanyUrl()));
                 startActivity(browserIntent);
             }
@@ -75,6 +88,15 @@ public class SelectedJobOfferActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.root_menu, menu);
+
+        if (database.getStoredJobOffer(jobOffer.id)) {
+            menu.findItem(R.id.action_favorite).setIcon(R.mipmap.icon_heartfilled_border_lay);
+            isHeartFilled = true;
+        } else {
+            menu.findItem(R.id.action_favorite).setIcon(R.mipmap.icon_heart_border_lay);
+            isHeartFilled = false;
+        }
+
         return true;
     }
 
@@ -87,18 +109,41 @@ public class SelectedJobOfferActivity extends AppCompatActivity {
             case R.id.action_favorite:
                 if (isHeartFilled) {
                     MakeToast("Offer removed from favourites");
+
+                    if (callingActivity.contains("RootActivity")) {
+                        RemoveJobOfferFromFavourites();
+                    }
+
                     item.setIcon(R.mipmap.icon_heart_border_lay);
                     isHeartFilled = false;
+                    finish();
                 } else {
                     MakeToast("Offer added to favourites");
+                    createJobOffer(jobOffer);
                     item.setIcon(R.mipmap.icon_heartfilled_border_lay);
                     isHeartFilled = true;
+                    finish();
                 }
                 return true;
 
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+
+    private void createJobOffer(JobOffer jobOffer) {
+        database.insertJobOffer(jobOffer);
+    }
+
+    private void deleteJobOffer(JobOffer jobOffer) {
+        database.deleteJobOffer(jobOffer);
+    }
+
+    private void RemoveJobOfferFromFavourites() {
+        deleteJobOffer(jobOffer);
+        FavouritesFragment.jobOffers.remove(jobOfferPosition);
+        FavouritesFragment.jobOfferAdapter.notifyItemRemoved(jobOfferPosition);
+        FavouritesFragment.jobOfferAdapter.notifyDataSetChanged();
     }
 
     private void MakeToast(String toastMessage) {
