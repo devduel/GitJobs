@@ -28,6 +28,7 @@ public class SearchFragment extends Fragment {
     private EditText locationEditText;
     private Switch fullTimeSwitch;
     private Button searchJobButton;
+    private Button showOnMapButton;
 
     JobOfferDao jobOfferDao = new JobOfferDaoImpl();
     public static List<JobOffer> jobOffers = new ArrayList<>();
@@ -45,6 +46,7 @@ public class SearchFragment extends Fragment {
         locationEditText = searchView.findViewById(R.id.locationEditTextID);
         fullTimeSwitch = searchView.findViewById(R.id.fullTimeSwitchID);
         searchJobButton = searchView.findViewById(R.id.searchJobButtonID);
+        showOnMapButton = searchView.findViewById(R.id.showOnMapButtonID);
 
         searchJobButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -78,6 +80,14 @@ public class SearchFragment extends Fragment {
                         getContext().startActivity(intent);
                     }
                 });
+            }
+        });
+
+        showOnMapButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getContext(), MapsActivity.class);
+                getContext().startActivity(intent);
             }
         });
 
