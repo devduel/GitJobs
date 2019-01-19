@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="NightMode">
+        <attr name="colorPrimary" format="color" />
+        <attr name="secondaryText" format="color" />
+        <attr name="colorBackground" format="color" />
+        <attr name="colorBottomNavigation" format="color" />
+        <attr name="colorBottomNavigationBackground" format="color" />
+        <attr name="colorEditTextBackground" format="color" />
+        <attr name="colorHint" format="color" />
+        <attr name="colorThumb" format="color" />
+        <attr name="colorText" format="color" />
+    </declare-styleable>
+</resources>

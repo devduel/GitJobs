@@ -1,20 +1,37 @@
 <resources>
 
-    <!-- Base application theme. -->
+    <!-- Light mode theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="android:statusBarColor">@color/colorGreen</item>
+        <item name="colorPrimary">@color/colorPrimaryLightMode</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorBackground">#ffffff</item>
+        <item name="colorBottomNavigation">@color/colorBottomNavigationIconLightMode</item>
+        <item name="colorBottomNavigationBackground">
+            @color/colorBottomNavigationBackgroundLightMode
+        </item>
+        <item name="colorEditTextBackground">@color/colorEditTextBackgroundLightMode</item>
+        <item name="colorHint">@color/colorHintLightMode</item>
+        <item name="colorThumb">@color/colorThumb</item>
+        <item name="colorText">@color/colorTextLightMode</item>
     </style>
 
-    <style name="AppTheme.NoActionBar">
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
+    <!-- Dark mode theme. -->
+    <style name="DarkTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:statusBarColor">@color/colorBlack</item>
+        <item name="colorPrimary">@color/colorPrimaryDarkMode</item>
+        <item name="colorPrimaryDark">@color/colorWhite</item>
+        <item name="colorAccent">@color/colorBlack</item>
+        <item name="colorBackground">#000000</item>
+        <item name="colorBottomNavigation">@color/colorBottomNavigationIconDarkMode</item>
+        <item name="colorBottomNavigationBackground">
+            @color/colorBottomNavigationBackgroundDarkMode
+        </item>
+        <item name="colorEditTextBackground">@color/colorEditTextBackgroundDarkMode</item>
+        <item name="colorHint">@color/colorHintDarkMode</item>
+        <item name="colorThumb">@color/colorThumb</item>
+        <item name="colorText">@color/colorTextDarkMode</item>
     </style>
-
-    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
-
-    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
 </resources>

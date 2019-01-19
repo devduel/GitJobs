@@ -4,12 +4,38 @@
     <color name="colorPrimaryDark">#289C2B</color>
     <color name="colorAccent">#FF4081</color>
     <color name="colorPrimaryLight">#84FF19</color>
+
     <color name="colorWhite">#ffffff</color>
     <color name="colorBlack">#000000</color>
+    <color name="colorGreen">#56B900</color>
+
     <color name="colorDivider">#2FE897</color>
     <color name="colorBorder">#a7a4a4</color>
     <color name="colorExtra">#fffac1</color>
 
     <color name="year">#999999</color>
     <color name="title">#222222</color>
+
+    <color name="colorPrimaryLightMode">#56B900</color>
+    <color name="colorPrimaryDarkMode">#252322</color>
+
+    <color name="colorBackgroundLightMode">#56B900</color>
+    <color name="colorBackgroundDarkMode">#000000</color>
+
+    <color name="colorBottomNavigationIconLightMode">#000000</color>
+    <color name="colorBottomNavigationIconDarkMode">#ffffff</color>
+
+    <color name="colorBottomNavigationBackgroundLightMode">#56B900</color>
+    <color name="colorBottomNavigationBackgroundDarkMode">#252322</color>
+
+    <color name="colorEditTextBackgroundLightMode">#ffffff</color>
+    <color name="colorEditTextBackgroundDarkMode">#363332</color>
+
+    <color name="colorHintLightMode">#999999</color>
+    <color name="colorHintDarkMode">#CDC9C7</color>
+
+    <color name="colorThumb">#56B900</color>
+
+    <color name="colorTextLightMode">#000000</color>
+    <color name="colorTextDarkMode">#ffffff</color>
 </resources>
