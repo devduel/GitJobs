@@ -72,6 +72,12 @@ public class RootActivity extends AppCompatActivity implements SensorEventListen
         sensorManager.unregisterListener(this);
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        sensorManager.registerListener(this, lightSensor, 10000000); // = each 100 seconds
+    }
+
     void setInitialBottomNavigation() {
         fragment = new SearchFragment();
         final FragmentTransaction transaction = fragmentManager.beginTransaction();
@@ -82,7 +88,7 @@ public class RootActivity extends AppCompatActivity implements SensorEventListen
         sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
         lightSensor = sensorManager.getDefaultSensor(Sensor.TYPE_LIGHT);
 
-        sensorManager.registerListener(this, lightSensor, 10000000); // = each 100 seconds
+        //sensorManager.registerListener(this, lightSensor, 10000000); // = each 100 seconds
     }
 
     @Override
