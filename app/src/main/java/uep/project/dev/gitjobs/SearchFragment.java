@@ -1,8 +1,11 @@
 package uep.project.dev.gitjobs;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
@@ -46,6 +49,12 @@ public class SearchFragment extends Fragment {
         searchJobButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                if (!checkInternetConnection()) {
+                    MakeToast("Internet is unavailable \nPlease try again later");
+                    return;
+                }
+
                 String parameters = retrieveAndBuildSearchJobParameters();
 
                 showProgressDialog();
@@ -57,10 +66,7 @@ public class SearchFragment extends Fragment {
                     public void onDismiss(DialogInterface dialogInterface) {
                         jobOffers = jobOfferDao.getJobOffers();
                         if (jobOffers.isEmpty()) {
-                            CharSequence toastText = "No job offers found";
-                            int duration = Toast.LENGTH_SHORT;
-                            Toast toast = Toast.makeText(getContext(), toastText, duration);
-                            toast.show();
+                            MakeToast("No job offers found");
 
                             fragment = new SearchFragment();
                             FragmentTransaction transaction = getFragmentManager().beginTransaction();
@@ -113,6 +119,23 @@ public class SearchFragment extends Fragment {
         progressDialog.setMessage("Fetching job offers");
         progressDialog.setCancelable(false);
         progressDialog.show();
+    }
+
+    boolean checkInternetConnection() {
+        ConnectivityManager connectivityManager = (ConnectivityManager) getActivity().getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
+        if (networkInfo != null && networkInfo.isConnected()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    private void MakeToast(String toastMessage) {
+        CharSequence toastText = toastMessage;
+        int duration = Toast.LENGTH_SHORT;
+        Toast toast = Toast.makeText(getContext(), toastText, duration);
+        toast.show();
     }
 }
 
