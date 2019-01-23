@@ -1,7 +1,7 @@
 <resources>
 
     <!-- Light mode theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:statusBarColor">@color/colorGreen</item>
         <item name="colorPrimary">@color/colorPrimaryLightMode</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
@@ -18,7 +18,7 @@
     </style>
 
     <!-- Dark mode theme. -->
-    <style name="DarkTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="DarkTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:statusBarColor">@color/colorBlack</item>
         <item name="colorPrimary">@color/colorPrimaryDarkMode</item>
         <item name="colorPrimaryDark">@color/colorWhite</item>

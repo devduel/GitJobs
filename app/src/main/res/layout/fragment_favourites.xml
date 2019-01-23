@@ -1,16 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
+    android:background="?attr/colorBackground"
+    android:orientation="vertical"
     tools:context=".FavouritesFragment">
 
-    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".FavouritesFragment">
+
+    <TextView
+        android:id="@+id/textGrid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Favourites"
+        android:layout_marginBottom="50dp"
+        android:layout_marginTop="50dp"
+        android:textColor="#3F51B5"
+        android:textStyle="bold"
+        android:textSize="40sp" />
 
         <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
             xmlns:tools="http://schemas.android.com/tools"
@@ -22,6 +31,8 @@
             tools:showIn="@layout/fragment_favourites"
             tools:context=".FavouritesFragment">
 
+
+
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/recycler_view"
                 android:background="?attr/colorBackground"
@@ -31,6 +42,6 @@
 
         </RelativeLayout>
 
-    </FrameLayout>
 
-</android.support.constraint.ConstraintLayout>
+
+</LinearLayout>

@@ -11,7 +11,7 @@
     <!-- SearchFragment Strings -->
     <string name="description_hint">Description</string>
     <string name="location_hint">Location</string>
-    <string name="full_time_switch">Full Time?</string>
+    <string name="full_time_switch">Full Time? \u0020</string>
     <string name="search_button">SEARCH JOB</string>
 
     <!-- SelectedJobOfferActivity Strings -->
