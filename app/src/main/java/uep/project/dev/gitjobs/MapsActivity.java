@@ -73,16 +73,16 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         LatLng poznan = new LatLng(52.4, 16.95);
 
-        mMap.addMarker(new MarkerOptions().position(jobOffer1).title("Marker in Sydney"));
-        mMap.addMarker(new MarkerOptions().position(jobOffer2).title("Marker in Sydney"));
-        mMap.addMarker(new MarkerOptions().position(jobOffer3).title("Marker in Sydney"));
-        mMap.addMarker(new MarkerOptions().position(jobOffer4).title("Marker in Sydney"));
-        mMap.addMarker(new MarkerOptions().position(jobOffer5).title("Marker in Sydney"));
-        mMap.addMarker(new MarkerOptions().position(jobOffer6).title("Marker in Sydney"));
-        mMap.addMarker(new MarkerOptions().position(jobOffer7).title("Marker in Sydney"));
-        mMap.addMarker(new MarkerOptions().position(jobOffer8).title("Marker in Sydney"));
-        mMap.addMarker(new MarkerOptions().position(jobOffer9).title("Marker in Sydney"));
-        mMap.addMarker(new MarkerOptions().position(jobOffer10).title("Marker in Sydney"));
+        mMap.addMarker(new MarkerOptions().position(jobOffer1).title("Software Solutions Architect"));
+        mMap.addMarker(new MarkerOptions().position(jobOffer2).title("Agile Android Developer"));
+        mMap.addMarker(new MarkerOptions().position(jobOffer3).title("Automation Engineer"));
+        mMap.addMarker(new MarkerOptions().position(jobOffer4).title("C++ Software Engineer"));
+        mMap.addMarker(new MarkerOptions().position(jobOffer5).title("Cloud Solution Architect"));
+        mMap.addMarker(new MarkerOptions().position(jobOffer6).title("Engineer, macOS Installation"));
+        mMap.addMarker(new MarkerOptions().position(jobOffer7).title("Finder UI Engineer"));
+        mMap.addMarker(new MarkerOptions().position(jobOffer8).title("Front End Developer"));
+        mMap.addMarker(new MarkerOptions().position(jobOffer9).title("Full Stack JAVA Developer"));
+        mMap.addMarker(new MarkerOptions().position(jobOffer10).title("Senioer PHP Developer"));
 
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(poznan, 9));
     }
