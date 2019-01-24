@@ -11,7 +11,7 @@
         <item name="colorBottomNavigationBackground">
             @color/colorBottomNavigationBackgroundLightMode
         </item>
-        <item name="colorEditTextBackground">@color/colorEditTextBackgroundLightMode</item>
+        <item name="colorEditTextBackground">@color/colorEditTextBackgroundDarkMode</item>
         <item name="colorHint">@color/colorHintLightMode</item>
         <item name="colorThumb">@color/colorThumb</item>
         <item name="colorText">@color/colorTextLightMode</item>
