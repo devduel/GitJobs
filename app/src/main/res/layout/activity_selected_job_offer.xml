@@ -77,8 +77,9 @@
 
     <Button
         android:id="@+id/openOnGithubButtonId"
-        android:layout_width="160dp"
-        android:layout_height="40dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
         android:textColor="#ffffff"
         android:background="@drawable/buttonshape"
         android:layout_marginStart="8dp"
@@ -91,8 +92,9 @@
 
     <Button
         android:id="@+id/openCompanyWebsiteButtonId"
-        android:layout_width="160dp"
-        android:layout_height="40dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
         android:textColor="#ffffff"
         android:background="@drawable/buttonshape"
         android:layout_marginStart="8dp"

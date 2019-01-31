@@ -19,7 +19,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:itemBackground="?attr/colorBottomNavigationBackground"
-        app:itemIconTint="?attr/colorBottomNavigation"
-        app:itemTextColor="?attr/colorBottomNavigation"
+        app:itemIconTint="@color/colorWhite"
+        app:itemTextColor="@color/colorWhite"
         android:layout_alignParentBottom="true"></android.support.design.widget.BottomNavigationView>
 </RelativeLayout>
