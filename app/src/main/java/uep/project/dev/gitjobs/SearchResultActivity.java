@@ -20,8 +20,6 @@ public class SearchResultActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private JobOfferAdapter jobOfferAdapter;
 
-    public static final int SEARCH_RESULT_ACTIVITY_FLAG = 1;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 

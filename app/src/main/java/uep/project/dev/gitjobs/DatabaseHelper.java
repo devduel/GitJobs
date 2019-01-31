@@ -5,7 +5,6 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -44,7 +43,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(JobOffer.COLUMN_DESCRIPTION, jobOffer.getDescription());
         values.put(JobOffer.COLUMN_HOW_TO_APPLY, jobOffer.getHowToApply());
         values.put(JobOffer.COLUMN_COMPANY_LOGO, jobOffer.getCompanyLogo());
-        //values.put(JobOffer.COLUMN_IS_FAVOURITE, jobOffer.getIsFavourite());
 
         long id = database.insert(JobOffer.TABLE_NAME, null, values);
         database.close();
@@ -59,13 +57,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 JobOffer.COLUMN_JOB_ID + " = ?",
                 new String[]{String.valueOf(jobId)}, null, null, null, null);
 
-        Log.d("Istnieje", cursor.toString());
-
         if (cursor.getCount() <= 0) {
-            Log.d("Istnieje", "false");
             return false;
         } else {
-            Log.d("Istnieje", "true");
             return true;
         }
     }
@@ -79,7 +73,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         if (cursor.moveToFirst()) {
             do {
-                //String id = cursor.getString(cursor.getColumnIndex(JobOffer.COLUMN_ID));
                 String jobId = cursor.getString(cursor.getColumnIndex(JobOffer.COLUMN_JOB_ID));
                 String type = cursor.getString(cursor.getColumnIndex(JobOffer.COLUMN_TYPE));
                 String url = cursor.getString(cursor.getColumnIndex(JobOffer.COLUMN_URL));
@@ -91,7 +84,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 String description = cursor.getString(cursor.getColumnIndex(JobOffer.COLUMN_DESCRIPTION));
                 String howToApply = cursor.getString(cursor.getColumnIndex(JobOffer.COLUMN_HOW_TO_APPLY));
                 String companyLogo = cursor.getString(cursor.getColumnIndex(JobOffer.COLUMN_COMPANY_LOGO));
-                //int isFavourite = cursor.getInt(cursor.getColumnIndex(JobOffer.COLUMN_IS_FAVOURITE));
 
                 JobOffer jobOffer = new JobOffer(jobId, type, url, createdAt, company, companyUrl, location, title, description, howToApply, companyLogo/*, isFavourite*/);
                 jobOffers.add(jobOffer);
@@ -101,23 +93,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         return jobOffers;
     }
-
-    public int getJobOffersCount() {
-        String countQuery = "SELECT * FROM " + JobOffer.TABLE_NAME;
-        SQLiteDatabase database = this.getReadableDatabase();
-        Cursor cursor = database.rawQuery(countQuery, null);
-        int count = cursor.getCount();
-        cursor.close();
-        return count;
-    }
-
-    /*public void updateJobOffer(JobOffer jobOffer) {
-        SQLiteDatabase database = this.getWritableDatabase();
-
-        ContentValues values = new ContentValues();
-        values.put(JobOffer.COLUMN_IS_FAVOURITE, jobOffer.getIsFavourite());
-        database.update(JobOffer.TABLE_NAME, values, JobOffer.COLUMN_JOB_ID + " = ?", new String[]{String.valueOf(jobOffer.getId())});
-    }*/
 
     public void deleteJobOffer(JobOffer jobOffer) {
         SQLiteDatabase database = this.getWritableDatabase();

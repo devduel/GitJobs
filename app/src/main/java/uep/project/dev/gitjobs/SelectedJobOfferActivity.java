@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.Html;
-import android.util.Log;
+import android.text.method.ScrollingMovementMethod;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -40,13 +40,6 @@ public class SelectedJobOfferActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
-        /*if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES) {
-            setTheme(R.style.DarkTheme);
-        } else {
-            setTheme(R.style.AppTheme);
-        }*/
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_selected_job_offer);
 
@@ -56,6 +49,7 @@ public class SelectedJobOfferActivity extends AppCompatActivity {
         companyAndLocationTextView = findViewById(R.id.companyAndLocationTextViewId);
         titleTextView = findViewById(R.id.titleTextViewId);
         descriptionTextView = findViewById(R.id.descriptionTextViewId);
+        descriptionTextView.setMovementMethod(new ScrollingMovementMethod());
         openOnGithubButton = findViewById(R.id.openOnGithubButtonId);
         openCompanyWebsiteButton = findViewById(R.id.openCompanyWebsiteButtonId);
         companyLogoImageView = findViewById(R.id.companyLogoImageViewId);
@@ -66,8 +60,6 @@ public class SelectedJobOfferActivity extends AppCompatActivity {
         jobOfferPosition = getIntent().getIntExtra(JOB_OFFER_POSITION, -1);
         callingActivity = getIntent().getStringExtra(CALLING_ACTIVITY);
 
-        Log.d("Result", callingActivity);
-
         companyAndLocationTextView.setText(jobOffer.getCompany() + " / " + jobOffer.getLocation());
         titleTextView.setText(jobOffer.getTitle());
         descriptionTextView.setText(Html.fromHtml(jobOffer.getDescription()));
@@ -77,16 +69,25 @@ public class SelectedJobOfferActivity extends AppCompatActivity {
         openOnGithubButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(jobOffer.getUrl()));
-                startActivity(browserIntent);
+                if (jobOffer.getUrl() != "") {
+                    Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(jobOffer.getUrl()));
+                    startActivity(browserIntent);
+                } else {
+                    MakeToast("The url is empty");
+                }
+
             }
         });
 
         openCompanyWebsiteButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(jobOffer.getCompanyUrl()));
-                startActivity(browserIntent);
+                if (jobOffer.getCompanyUrl() != "") {
+                    Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(jobOffer.getCompanyUrl()));
+                    startActivity(browserIntent);
+                } else {
+                    MakeToast("The url is empty");
+                }
             }
         });
     }

@@ -17,8 +17,6 @@ public class JobOffer implements Serializable {
     public static final String COLUMN_DESCRIPTION = "description";
     public static final String COLUMN_HOW_TO_APPLY = "howtoapply";
     public static final String COLUMN_COMPANY_LOGO = "companylogo";
-    //public static final String COLUMN_IS_FAVOURITE = "isfavourite";
-
 
     String id;
     String type;
@@ -31,7 +29,6 @@ public class JobOffer implements Serializable {
     String description;
     String howToApply;
     String companyLogo;
-    //int isFavourite;
 
     public static final String CREATE_TABLE =
             "CREATE TABLE " + TABLE_NAME + "("
@@ -62,7 +59,6 @@ public class JobOffer implements Serializable {
         this.description = description;
         this.howToApply = howToApply;
         this.companyLogo = companyLogo;
-        //this.isFavourite = isFavourite;
     }
 
     public String getId() {
@@ -108,10 +104,4 @@ public class JobOffer implements Serializable {
     public String getCompanyLogo() {
         return companyLogo;
     }
-
-    /*public int getIsFavourite() { return isFavourite; }
-
-    public void setIsFavorutie(int isFavourite) {
-        this.isFavourite = isFavourite;
-    }*/
 }

@@ -24,4 +24,15 @@
     <string name="show_on_map_button">Show the nearest offers</string>
     <string name="title_activity_maps">Map</string>
     <string name="title_activity_maps2">Map</string>
+    <string name="search_results">Search Results</string>
+    <string name="company_logo_placeholder">Company Logo</string>
+    <string name="switch_yes">Yes</string>
+    <string name="switch_no">No</string>
+    <string name="settings_image_placeholder">Settings Image</string>
+    <string name="settings_privacy">Privacy</string>
+    <string name="settings_internet">Internet</string>
+    <string name="settings_brightness">Brightness</string>
+    <string name="settings_location">Location</string>
+    <string name="settings_notifications">Notifications</string>
+    <string name="settings_faq">FAQ</string>
 </resources>

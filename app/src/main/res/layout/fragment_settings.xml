@@ -20,10 +20,10 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginBottom="50dp"
+        android:text="@string/action_settings"
         android:textColor="#3F51B5"
-        android:textStyle="bold"
-        android:text="Settings"
-        android:textSize="40sp" />
+        android:textSize="40sp"
+        android:textStyle="bold" />
 
     <GridLayout
         android:columnCount="2"
@@ -62,13 +62,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
+                    android:contentDescription="@string/settings_image_placeholder"
                     android:src="@drawable/privacy" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="Privacy"
+                    android:text="@string/settings_privacy"
                     android:textColor="@android:color/black"
                     android:textSize="15sp"
                     android:textStyle="bold" />
@@ -97,18 +98,20 @@
                 android:layout_height="80dp">
 
                 <ImageView
-                    android:src="@drawable/wifi"
-                    android:layout_gravity="center_horizontal"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:contentDescription="@string/settings_image_placeholder"
+                    android:src="@drawable/wifi" />
+
                 <TextView
-                    android:text="Internet"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_gravity="center"
+                    android:text="@string/settings_internet"
                     android:textColor="@android:color/black"
                     android:textSize="15sp"
-                    android:textStyle="bold"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:textStyle="bold" />
 
 
             </LinearLayout>
@@ -136,18 +139,20 @@
                 android:layout_height="80dp">
 
                 <ImageView
-                    android:src="@drawable/brightness"
-                    android:layout_gravity="center_horizontal"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:contentDescription="@string/settings_image_placeholder"
+                    android:src="@drawable/brightness" />
+
                 <TextView
-                    android:text="Brightness"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_gravity="center"
+                    android:text="@string/settings_brightness"
                     android:textColor="@android:color/black"
                     android:textSize="15sp"
-                    android:textStyle="bold"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:textStyle="bold" />
 
 
             </LinearLayout>
@@ -173,18 +178,20 @@
                 android:layout_height="80dp">
 
                 <ImageView
-                    android:src="@drawable/location"
-                    android:layout_gravity="center_horizontal"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:contentDescription="@string/settings_image_placeholder"
+                    android:src="@drawable/location" />
+
                 <TextView
-                    android:text="Location"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_gravity="center"
+                    android:text="@string/settings_location"
                     android:textColor="@android:color/black"
                     android:textSize="15sp"
-                    android:textStyle="bold"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:textStyle="bold" />
 
 
             </LinearLayout>
@@ -212,18 +219,20 @@
                 android:layout_height="80dp">
 
                 <ImageView
-                    android:src="@drawable/notification"
-                    android:layout_gravity="center_horizontal"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:contentDescription="@string/settings_image_placeholder"
+                    android:src="@drawable/notification" />
+
                 <TextView
-                    android:text="Notifications"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_gravity="center"
+                    android:text="@string/settings_notifications"
                     android:textColor="@android:color/black"
                     android:textSize="15sp"
-                    android:textStyle="bold"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:textStyle="bold" />
 
 
             </LinearLayout>
@@ -249,18 +258,20 @@
                 android:layout_height="80dp">
 
                 <ImageView
-                    android:src="@drawable/faq"
-                    android:layout_gravity="center_horizontal"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:contentDescription="@string/settings_image_placeholder"
+                    android:src="@drawable/faq" />
+
                 <TextView
-                    android:text="FAQ"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_gravity="center"
+                    android:text="@string/settings_faq"
                     android:textColor="@android:color/black"
                     android:textSize="15sp"
-                    android:textStyle="bold"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:textStyle="bold" />
 
 
             </LinearLayout>

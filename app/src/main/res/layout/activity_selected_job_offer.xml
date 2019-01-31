@@ -4,17 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorBorder"
     tools:context=".SelectedJobOfferActivity">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/my_toolbar"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
         android:layout_width="match_parent"
-
         android:layout_height="?attr/actionBarSize"
-        android:background="?attr/colorPrimary"
+
+        android:layout_marginTop="8dp"
+        android:background="#3F51B5"
         android:elevation="4dp"
-        android:theme="@style/ThemeOverlay.AppCompat.ActionBar" />
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:layout_constraintTop_toTopOf="parent"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
     <ImageView
         android:id="@+id/companyLogoImageViewId"
@@ -24,7 +27,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:adjustViewBounds="true"
-        android:contentDescription="tes"
+        android:contentDescription="@string/company_logo_placeholder"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/companyAndLocationTextViewId" />
@@ -36,7 +39,6 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:text="TextView"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -49,9 +51,8 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:text="TextView"
-        android:textColor="#3F51B5"
         android:textAlignment="center"
+        android:textColor="#3F51B5"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -74,18 +75,17 @@
         app:layout_constraintTop_toBottomOf="@+id/companyLogoImageViewId" />
 
 
-
     <Button
         android:id="@+id/openOnGithubButtonId"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="5dp"
-        android:textColor="#ffffff"
-        android:background="@drawable/buttonshape"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
+        android:background="@drawable/buttonshape"
+        android:padding="5dp"
         android:text="@string/open_offer_on_github_button"
+        android:textColor="#ffffff"
         app:layout_constraintBottom_toTopOf="@+id/openCompanyWebsiteButtonId"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -94,13 +94,13 @@
         android:id="@+id/openCompanyWebsiteButtonId"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="5dp"
-        android:textColor="#ffffff"
-        android:background="@drawable/buttonshape"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
+        android:background="@drawable/buttonshape"
+        android:padding="5dp"
         android:text="@string/open_company_website_button"
+        android:textColor="#ffffff"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
